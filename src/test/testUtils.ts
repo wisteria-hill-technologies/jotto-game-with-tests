@@ -3,5 +3,5 @@ interface Wrapper {
 }
 
 export const findByTestAttr = (wrapper: Wrapper, name: string) => {
-  return wrapper.find(`[data-test='${name}']`);
+  return wrapper.find(`[data-test="${name}"]`);
 };
