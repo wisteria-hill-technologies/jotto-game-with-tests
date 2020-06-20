@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 interface Props {
   success?: boolean;
@@ -20,6 +21,10 @@ const Congrats: React.FC<Props> = (props) => {
       />
     )
   }
+};
+
+Congrats.propTypes = {
+  success: PropTypes.bool.isRequired,
 };
 
 export default Congrats;

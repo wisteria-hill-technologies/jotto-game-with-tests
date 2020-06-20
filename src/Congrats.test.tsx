@@ -1,10 +1,13 @@
 import React from "react";
 import { shallow } from 'enzyme';
 import Congrats from "./Congrats";
-import { findByTestAttr } from './test/testUtils';
+import { findByTestAttr, checkProps } from './test/testUtils';
+
+const defaultProps = { success: false };
 
 const setup = (props={}) => {
-  return shallow(<Congrats { ...props } />);
+  const setupProps = { ...defaultProps, ...props };
+  return shallow(<Congrats { ...setupProps } />);
 };
 
 describe("Congrats", () => {
@@ -22,5 +25,9 @@ describe("Congrats", () => {
     const wrapper = setup({ success: true });
     const message = findByTestAttr(wrapper, 'congrats-message');
     expect(message.text().length).not.toBe(0);
+  });
+  test('does not throw warning with expected props', () => {
+    const expectedProps = { success: false };
+    checkProps(Congrats, expectedProps);
   });
 });
