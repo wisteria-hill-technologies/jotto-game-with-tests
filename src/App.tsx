@@ -6,7 +6,10 @@ import Congrats from './Congrats';
 class App extends Component {
   render() {
     return (
-      <div className="App container">
+      <div
+        data-test="component-app"
+        className="App container"
+      >
         <h1>Jotto</h1>
         <Congrats success={true} />
         <GuessedWords guessedWords={[
