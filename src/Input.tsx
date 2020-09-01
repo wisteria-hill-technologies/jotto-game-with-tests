@@ -19,6 +19,10 @@ const Input: React.FC<Props> = ({ secretWord }) => {
           onChange={(event) => setCurrentGuess(event.target.value) }
         />
         <button
+          onClick={(e) => {
+            e.preventDefault();
+            setCurrentGuess('')
+          }}
           data-test="submit-button"
           className="btn btn-primary mb-2"
         >
