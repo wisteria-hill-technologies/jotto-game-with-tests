@@ -9,7 +9,7 @@ beforeEach(() => {
   fetch.mockClear();
 });
 
-import { getSecretWord } from './hookactions';
+import { getSecretWord } from './hookActions';
 
 
 it('getSecretWord', async () => {
